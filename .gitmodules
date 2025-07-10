@@ -1,0 +1,6 @@
+[submodule "Bird_individualID"]
+	path = Bird_individualID
+	url = https://github.com/AndreCFerreira/Bird_individualID.git
+[submodule "cgp-cnn"]
+	path = cgp-cnn
+	url = https://github.com/sg-nm/cgp-cnn.git
