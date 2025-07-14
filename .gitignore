@@ -1,3 +1,6 @@
 .ipynb_checkpoints/
+__pycache__
+Mask_RCNN-master
+mask_rcnn
 mask_rcnn_inception_v2_coco_2018_01_28/
 .env
