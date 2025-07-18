@@ -1,6 +1,13 @@
 .ipynb_checkpoints/
 __pycache__
-Mask_RCNN-master
+#Mask_RCNN-master
 mask_rcnn
+Mask_RCNN-master/assets/
+Mask_RCNN-master/images/
+Mask_RCNN-master/samples/balloon/
+Mask_RCNN-master/samples/ballon/36env/
+Mask_RCNN-master/samples/coco/
+Mask_RCNN-master/samples/shapes/
+Mask_RCNN-master/samples/nucleus/
 mask_rcnn_inception_v2_coco_2018_01_28/
 .env

@@ -1,0 +1,172 @@
+7 - rpn_bbox_loss: 0.2172 - mrcnn_class_loss: 0.0178 - mrcnn_bbox_loss: 0.1294 - mrcnn_mask_loss: 0.1553 - val_loss: 0.5860 - val_rpn_class_loss: 0.0043 - val_rpn_bbox_loss: 0.2960 - val_mrcnn_class_loss: 0.0168 - val_mrcnn_bbox_loss: 0.0983 - val_mrcnn_mask_loss: 0.1706
+Epoch 4/30
+  1/100 [..............................] - ETA: 0s - batch: 0.0000e+00 - size: 1.0000 - loss: 0.2125 - rpn_class_loss: 0.0023 - rpn_bbox_loss: 0.1011 - mrcnn_class_los  2/100 [..............................] - ETA: 7:18 - batch: 0.5000 - size: 1.0000 - loss: 0.2291 - rpn_class_loss: 0.0022 - rpn_bbox_loss: 0.0807 - mrcnn_class_loss:  3/100 [..............................] - ETA: 9:44 - batch: 1.0000 - size: 1.0000 - loss: 0.3297 - rpn_class_loss: 0.0026 - rpn_bbox_loss: 0.1608 - mrcnn_class_loss:  4/100 [>.............................] - ETA: 10:42 - batch: 1.5000 - size: 1.0000 - loss: 0.3123 - rpn_class_loss: 0.0026 - rpn_bbox_loss: 0.1410 - mrcnn_class_loss  5/100 [>.............................] - ETA: 11:18 - batch: 2.0000 - size: 1.0000 - loss: 0.3220 - rpn_class_loss: 0.0023 - rpn_bbox_loss: 0.1615 - mrcnn_class_loss  6/100 [>.............................] - ETA: 11:45 - batch: 2.5000 - size: 1.0000 - loss: 0.7525 - rpn_class_loss: 0.0296 - rpn_bbox_loss: 0.3840 - mrcnn_class_loss  7/100 [=>............................] - ETA: 11:57 - batch: 3.0000 - size: 1.0000 - loss: 0.7587 - rpn_class_loss: 0.0256 - rpn_bbox_loss: 0.4138 - mrcnn_class_loss  8/100 [=>............................] - ETA: 12:04 - batch: 3.5000 - size: 1.0000 - loss: 0.7199 - rpn_class_loss: 0.0228 - rpn_bbox_loss: 0.3696 - mrcnn_class_loss  9/100 [=>............................] - ETA: 12:06 - batch: 4.0000 - size: 1.0000 - loss: 0.6912 - rpn_class_loss: 0.0210 - rpn_bbox_loss: 0.3455 - mrcnn_class_loss 10/100 [==>...........................] - ETA: 12:06 - batch: 4.5000 - size: 1.0000 - loss: 0.6501 - rpn_class_loss: 0.0192 - rpn_bbox_loss: 0.3255 - mrcnn_class_loss 11/100 [==>...........................] - ETA: 12:06 - batch: 5.0000 - size: 1.0000 - loss: 0.6080 - rpn_class_loss: 0.0179 - rpn_bbox_loss: 0.2990 - mrcnn_class_loss 12/100 [==>...........................] - ETA: 12:05 - batch: 5.5000 - size: 1.0000 - loss: 0.5760 - rpn_class_loss: 0.0165 - rpn_bbox_loss: 0.2794 - mrcnn_class_loss 13/100 [==>...........................] - ETA: 12:01 - batch: 6.0000 - size: 1.0000 - loss: 0.5526 - rpn_class_loss: 0.0152 - rpn_bbox_loss: 0.2606 - mrcnn_class_loss 14/100 [===>..........................] - ETA: 11:58 - batch: 6.5000 - size: 1.0000 - loss: 0.5534 - rpn_class_loss: 0.0142 - rpn_bbox_loss: 0.2530 - mrcnn_class_loss 15/100 [===>..........................] - ETA: 11:53 - batch: 7.0000 - size: 1.0000 - loss: 0.5375 - rpn_class_loss: 0.0133 - rpn_bbox_loss: 0.2413 - mrcnn_class_loss 16/100 [===>..........................] - ETA: 11:48 - batch: 7.5000 - size: 1.0000 - loss: 0.5280 - rpn_class_loss: 0.0125 - rpn_bbox_loss: 0.2348 - mrcnn_class_loss 17/100 [====>.........................] - ETA: 11:42 - batch: 8.0000 - size: 1.0000 - loss: 0.5212 - rpn_class_loss: 0.0121 - rpn_bbox_loss: 0.2308 - mrcnn_class_loss 18/100 [====>.........................] - ETA: 11:35 - batch: 8.5000 - size: 1.0000 - loss: 0.5332 - rpn_class_loss: 0.0117 - rpn_bbox_loss: 0.2483 - mrcnn_class_loss 19/100 [====>.........................] - ETA: 11:29 - batch: 9.0000 - size: 1.0000 - loss: 0.5342 - rpn_class_loss: 0.0111 - rpn_bbox_loss: 0.2521 - mrcnn_class_loss 20/100 [=====>........................] - ETA: 11:23 - batch: 9.5000 - size: 1.0000 - loss: 0.5227 - rpn_class_loss: 0.0107 - rpn_bbox_loss: 0.2474 - mrcnn_class_loss 21/100 [=====>........................] - ETA: 11:16 - batch: 10.0000 - size: 1.0000 - loss: 0.5140 - rpn_class_loss: 0.0102 - rpn_bbox_loss: 0.2444 - mrcnn_class_los 22/100 [=====>........................] - ETA: 11:09 - batch: 10.5000 - size: 1.0000 - loss: 0.5131 - rpn_class_loss: 0.0097 - rpn_bbox_loss: 0.2458 - mrcnn_class_los 23/100 [=====>........................] - ETA: 11:01 - batch: 11.0000 - size: 1.0000 - loss: 0.5027 - rpn_class_loss: 0.0093 - rpn_bbox_loss: 0.2399 - mrcnn_class_los 24/100 [======>.......................] - ETA: 10:54 - batch: 11.5000 - size: 1.0000 - loss: 0.4961 - rpn_class_loss: 0.0093 - rpn_bbox_loss: 0.2353 - mrcnn_class_los 25/100 [======>.......................] - ETA: 10:45 - batch: 12.0000 - size: 1.0000 - loss: 0.4877 - rpn_class_loss: 0.0089 - rpn_bbox_loss: 0.2323 - mrcnn_class_los 26/100 [======>.......................] - ETA: 10:36 - batch: 12.5000 - size: 1.0000 - loss: 0.4957 - rpn_class_loss: 0.0086 - rpn_bbox_loss: 0.2384 - mrcnn_class_los 27/100 [=======>......................] - ETA: 10:29 - batch: 13.0000 - size: 1.0000 - loss: 0.5001 - rpn_class_loss: 0.0085 - rpn_bbox_loss: 0.2450 - mrcnn_class_los 28/100 [=======>......................] - ETA: 10:21 - batch: 13.5000 - size: 1.0000 - loss: 0.4899 - rpn_class_loss: 0.0082 - rpn_bbox_loss: 0.2379 - mrcnn_class_los 29/100 [=======>......................] - ETA: 10:13 - batch: 14.0000 - size: 1.0000 - loss: 0.4795 - rpn_class_loss: 0.0081 - rpn_bbox_loss: 0.2319 - mrcnn_class_los 30/100 [========>.....................] - ETA: 10:06 - batch: 14.5000 - size: 1.0000 - loss: 0.4906 - rpn_class_loss: 0.0080 - rpn_bbox_loss: 0.2409 - mrcnn_class_los 31/100 [========>.....................] - ETA: 9:58 - batch: 15.0000 - size: 1.0000 - loss: 0.4892 - rpn_class_loss: 0.0078 - rpn_bbox_loss: 0.2409 - mrcnn_class_loss 32/100 [========>.....................] - ETA: 9:49 - batch: 15.5000 - size: 1.0000 - loss: 0.4808 - rpn_class_loss: 0.0076 - rpn_bbox_loss: 0.2372 - mrcnn_class_loss 33/100 [========>.....................] - ETA: 9:41 - batch: 16.0000 - size: 1.0000 - loss: 0.4785 - rpn_class_loss: 0.0074 - rpn_bbox_loss: 0.2373 - mrcnn_class_loss 34/100 [=========>....................] - ETA: 9:32 - batch: 16.5000 - size: 1.0000 - loss: 0.4737 - rpn_class_loss: 0.0073 - rpn_bbox_loss: 0.2323 - mrcnn_class_loss 35/100 [=========>....................] - ETA: 9:24 - batch: 17.0000 - size: 1.0000 - loss: 0.4732 - rpn_class_loss: 0.0071 - rpn_bbox_loss: 0.2341 - mrcnn_class_loss 36/100 [=========>....................] - ETA: 9:16 - batch: 17.5000 - size: 1.0000 - loss: 0.4879 - rpn_class_loss: 0.0074 - rpn_bbox_loss: 0.2375 - mrcnn_class_loss 37/100 [==========>...................] - ETA: 9:08 - batch: 18.0000 - size: 1.0000 - loss: 0.4898 - rpn_class_loss: 0.0073 - rpn_bbox_loss: 0.2407 - mrcnn_class_loss 38/100 [==========>...................] - ETA: 9:00 - batch: 18.5000 - size: 1.0000 - loss: 0.4854 - rpn_class_loss: 0.0071 - rpn_bbox_loss: 0.2380 - mrcnn_class_loss 39/100 [==========>...................] - ETA: 8:52 - batch: 19.0000 - size: 1.0000 - loss: 0.4817 - rpn_class_loss: 0.0070 - rpn_bbox_loss: 0.2359 - mrcnn_class_loss 40/100 [===========>..................] - ETA: 8:44 - batch: 19.5000 - size: 1.0000 - loss: 0.4941 - rpn_class_loss: 0.0070 - rpn_bbox_loss: 0.2399 - mrcnn_class_loss 41/100 [===========>..................] - ETA: 8:36 - batch: 20.0000 - size: 1.0000 - loss: 0.4946 - rpn_class_loss: 0.0069 - rpn_bbox_loss: 0.2388 - mrcnn_class_loss 42/100 [===========>..................] - ETA: 8:28 - batch: 20.5000 - size: 1.0000 - loss: 0.4874 - rpn_class_loss: 0.0067 - rpn_bbox_loss: 0.2346 - mrcnn_class_loss 43/100 [===========>..................] - ETA: 8:19 - batch: 21.0000 - size: 1.0000 - loss: 0.4852 - rpn_class_loss: 0.0066 - rpn_bbox_loss: 0.2347 - mrcnn_class_loss 44/100 [============>.................] - ETA: 8:10 - batch: 21.5000 - size: 1.0000 - loss: 0.4809 - rpn_class_loss: 0.0064 - rpn_bbox_loss: 0.2338 - mrcnn_class_loss 45/100 [============>.................] - ETA: 8:02 - batch: 22.0000 - size: 1.0000 - loss: 0.4782 - rpn_class_loss: 0.0063 - rpn_bbox_loss: 0.2318 - mrcnn_class_loss 46/100 [============>.................] - ETA: 7:54 - batch: 22.5000 - size: 1.0000 - loss: 0.4734 - rpn_class_loss: 0.0062 - rpn_bbox_loss: 0.2280 - mrcnn_class_loss 47/100 [=============>................] - ETA: 7:46 - batch: 23.0000 - size: 1.0000 - loss: 0.4700 - rpn_class_loss: 0.0061 - rpn_bbox_loss: 0.2270 - mrcnn_class_loss 48/100 [=============>................] - ETA: 7:37 - batch: 23.5000 - size: 1.0000 - loss: 0.4684 - rpn_class_loss: 0.0061 - rpn_bbox_loss: 0.2266 - mrcnn_class_loss 49/100 [=============>................] - ETA: 7:29 - batch: 24.0000 - size: 1.0000 - loss: 0.4697 - rpn_class_loss: 0.0061 - rpn_bbox_loss: 0.2270 - mrcnn_class_loss 50/100 [==============>...............] - ETA: 7:21 - batch: 24.5000 - size: 1.0000 - loss: 0.4661 - rpn_class_loss: 0.0060 - rpn_bbox_loss: 0.2252 - mrcnn_class_loss 51/100 [==============>...............] - ETA: 7:12 - batch: 25.0000 - size: 1.0000 - loss: 0.4618 - rpn_class_loss: 0.0059 - rpn_bbox_loss: 0.2234 - mrcnn_class_loss 52/100 [==============>...............] - ETA: 7:04 - batch: 25.5000 - size: 1.0000 - loss: 0.4672 - rpn_class_loss: 0.0059 - rpn_bbox_loss: 0.2292 - mrcnn_class_loss 53/100 [==============>...............] - ETA: 6:55 - batch: 26.0000 - size: 1.0000 - loss: 0.4658 - rpn_class_loss: 0.0058 - rpn_bbox_loss: 0.2290 - mrcnn_class_loss 54/100 [===============>..............] - ETA: 6:47 - batch: 26.5000 - size: 1.0000 - loss: 0.4710 - rpn_class_loss: 0.0058 - rpn_bbox_loss: 0.2306 - mrcnn_class_loss 55/100 [===============>..............] - ETA: 6:38 - batch: 27.0000 - size: 1.0000 - loss: 0.4660 - rpn_class_loss: 0.0057 - rpn_bbox_loss: 0.2274 - mrcnn_class_loss 56/100 [===============>..............] - ETA: 6:29 - batch: 27.5000 - size: 1.0000 - loss: 0.4642 - rpn_class_loss: 0.0056 - rpn_bbox_loss: 0.2245 - mrcnn_class_loss 57/100 [================>.............] - ETA: 6:21 - batch: 28.0000 - size: 1.0000 - loss: 0.4603 - rpn_class_loss: 0.0055 - rpn_bbox_loss: 0.2219 - mrcnn_class_loss 58/100 [================>.............] - ETA: 6:13 - batch: 28.5000 - size: 1.0000 - loss: 0.4567 - rpn_class_loss: 0.0055 - rpn_bbox_loss: 0.2201 - mrcnn_class_loss 59/100 [================>.............] - ETA: 6:09 - batch: 29.0000 - size: 1.0000 - loss: 0.4543 - rpn_class_loss: 0.0054 - rpn_bbox_loss: 0.2187 - mrcnn_class_loss 60/100 [=================>............] - ETA: 6:05 - batch: 29.5000 - size: 1.0000 - loss: 0.4509 - rpn_class_loss: 0.0053 - rpn_bbox_loss: 0.2159 - mrcnn_class_loss: 0.0236 - mrcnn_bbox_loss: 0.1045 - mrcnn_mask_loss: 0.1015
+ *  History restored 
+
+Invoke-Expression: Missing argument in parameter list.
+PS C:\Users\alexw\Assignments\AIML339\Project> .\samples\balloon\38env\Scripts\activate
+.\samples\balloon\38env\Scripts\activate: The term '.\samples\balloon\38env\Scripts\activate' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\alexw\Assignments\AIML339\Project> Mask_RCNN-master\samples\balloon\38env\Scripts\activate
+(38env) PS C:\Users\alexw\Assignments\AIML339\Project> cd Mask_RCNN-master/samples/custom 
+(38env) PS C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\samples\custom> python custom.py train --dataset=D:\Datasets\VGG-dataset --weights=coco
+2025-07-16 20:33:12.274936: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_110.dll
+Weights:  coco
+Dataset:  D:\Datasets\VGG-dataset
+Logs:  C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs
+
+Configurations:
+BACKBONE                       resnet101
+BACKBONE_STRIDES               [4, 8, 16, 32, 64]
+BATCH_SIZE                     1
+BBOX_STD_DEV                   [0.1 0.1 0.2 0.2]
+COMPUTE_BACKBONE_SHAPE         None
+DETECTION_MAX_INSTANCES        100
+DETECTION_MIN_CONFIDENCE       0.9
+DETECTION_NMS_THRESHOLD        0.3
+FPN_CLASSIF_FC_LAYERS_SIZE     1024
+GPU_COUNT                      1
+GRADIENT_CLIP_NORM             5.0
+IMAGES_PER_GPU                 1
+IMAGE_CHANNEL_COUNT            3
+IMAGE_MAX_DIM                  1024
+IMAGE_META_SIZE                14
+IMAGE_MIN_DIM                  800
+IMAGE_MIN_SCALE                0
+IMAGE_RESIZE_MODE              square
+IMAGE_SHAPE                    [1024 1024    3]
+LEARNING_MOMENTUM              0.9
+LEARNING_RATE                  0.001
+LOSS_WEIGHTS                   {'rpn_class_loss': 1.0, 'rpn_bbox_loss': 1.0, 'mrcnn_class_loss': 1.0, 'mrcnn_bbox_loss': 1.0, 'mrcnn_mask_loss': 1.0}
+MASK_POOL_SIZE                 14
+MASK_SHAPE                     [28, 28]
+MAX_GT_INSTANCES               100
+MEAN_PIXEL                     [123.7 116.8 103.9]
+MINI_MASK_SHAPE                (56, 56)
+NAME                           kaakaaDataset
+NUM_CLASSES                    2
+POOL_SIZE                      7
+POST_NMS_ROIS_INFERENCE        1000
+POST_NMS_ROIS_TRAINING         2000
+PRE_NMS_LIMIT                  6000
+ROI_POSITIVE_RATIO             0.33
+RPN_ANCHOR_RATIOS              [0.5, 1, 2]
+RPN_ANCHOR_SCALES              (32, 64, 128, 256, 512)
+RPN_ANCHOR_STRIDE              1
+RPN_BBOX_STD_DEV               [0.1 0.1 0.2 0.2]
+RPN_NMS_THRESHOLD              0.7
+RPN_TRAIN_ANCHORS_PER_IMAGE    256
+STEPS_PER_EPOCH                100
+TOP_DOWN_PYRAMID_SIZE          256
+TRAIN_BN                       False
+TRAIN_ROIS_PER_IMAGE           200
+USE_MINI_MASK                  True
+USE_RPN_ROIS                   True
+VALIDATION_STEPS               50
+WEIGHT_DECAY                   0.0001
+
+
+2025-07-16 20:33:17.985905: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
+2025-07-16 20:33:18.016705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce RTX 3070 Laptop GPU computeCapability: 8.6
+coreClock: 1.56GHz coreCount: 40 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 417.29GiB/s
+2025-07-16 20:33:18.017018: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_110.dll
+2025-07-16 20:33:18.025481: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_11.dll
+2025-07-16 20:33:18.031426: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2025-07-16 20:33:18.033394: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2025-07-16 20:33:18.035723: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2025-07-16 20:33:18.039868: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_11.dll
+2025-07-16 20:33:18.040934: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudnn64_8.dll
+2025-07-16 20:33:18.041104: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Loading weights  C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\mask_rcnn_coco.h5
+2025-07-16 20:33:19.828355: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x203b3449970 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-07-16 20:33:19.828508: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2025-07-16 20:33:19.828787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2025-07-16 20:33:19.828928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]
+Training network heads
+
+Starting at epoch 0. LR=0.001
+
+Checkpoint Path: C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\mask_rcnn_kaakaadataset_{epoch:04d}.h5
+Selecting layers to train
+fpn_c5p5               (Conv2D)
+fpn_c4p4               (Conv2D)
+fpn_c3p3               (Conv2D)
+fpn_c2p2               (Conv2D)
+fpn_p5                 (Conv2D)
+fpn_p2                 (Conv2D)
+fpn_p3                 (Conv2D)
+fpn_p4                 (Conv2D)
+rpn_model              (Functional)
+mrcnn_mask_conv1       (TimeDistributed)
+mrcnn_mask_bn1         (TimeDistributed)
+mrcnn_mask_conv2       (TimeDistributed)
+mrcnn_mask_bn2         (TimeDistributed)
+mrcnn_class_conv1      (TimeDistributed)
+mrcnn_class_bn1        (TimeDistributed)
+mrcnn_mask_conv3       (TimeDistributed)
+mrcnn_mask_bn3         (TimeDistributed)
+mrcnn_class_conv2      (TimeDistributed)
+mrcnn_class_bn2        (TimeDistributed)
+mrcnn_mask_conv4       (TimeDistributed)
+mrcnn_mask_bn4         (TimeDistributed)
+mrcnn_bbox_fc          (TimeDistributed)
+mrcnn_mask_deconv      (TimeDistributed)
+mrcnn_class_logits     (TimeDistributed)
+mrcnn_mask             (TimeDistributed)
+Epoch 1/30
+C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\samples\balloon\38env\lib\site-packages\tensorflow\python\framework\indexed_slices.py:431: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  warnings.warn(
+  1/100 [..............................] - ETA: 0s - batch: 0.0000e+00 - size: 1.0000 - loss: 1.8622 - rpn_class_loss: 0.0012 - rpn_bbox_loss: 0.0799 - mrcnn_class_loss: 0.0554 - mrcnn_bbox_loss: 0.7066 - mrcnn_mask_loss: 1.01902025-07-16 20:34:44.747988: I tensorflow/core/profiler/lib/profiler_session.cc:164] Profiler session started.
+2025-07-16 20:34:44.748537: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1391] Profiler found 1 GPUs
+2025-07-16 20:34:44.752353: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cupti64_110.dll'; dlerror: cupti64_110.dll not found
+2025-07-16 20:34:44.754719: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cupti.dll'; dlerror: cupti.dll not found   
+2025-07-16 20:34:44.754873: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1441] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI could not be loaded or symbol could not be found.
+2025-07-16 20:34:58.995128: I tensorflow/core/profiler/internal/gpu/device_tracer.cc:223]  GpuTracer has collected 0 callback api events and 0 activity events. 
+2025-07-16 20:34:59.052564: I tensorflow/core/profiler/rpc/client/save_profile.cc:176] Creating directory: C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59
+2025-07-16 20:34:59.097378: I tensorflow/core/profiler/rpc/client/save_profile.cc:182] Dumped gzipped tool data for trace.json.gz to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.trace.json.gz
+2025-07-16 20:34:59.102391: E tensorflow/core/profiler/utils/hardware_type_utils.cc:61] Invalid GPU compute capability.
+2025-07-16 20:34:59.173193: I tensorflow/core/profiler/rpc/client/save_profile.cc:176] Creating directory: C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59
+2025-07-16 20:34:59.194734: I tensorflow/core/profiler/rpc/client/save_profile.cc:182] Dumped gzipped tool data for memory_profile.json.gz to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.memory_profile.json.gz
+2025-07-16 20:34:59.284115: I tensorflow/python/profiler/internal/profiler_wrapper.cc:111] Creating directory: C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59Dumped tool data for xplane.pb to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.xplane.pb
+Dumped tool data for overview_page.pb to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.overview_page.pb
+Dumped tool data for input_pipeline.pb to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.tensorflow_stats.pb
+Dumped tool data for kernel_stats.pb to C:\Users\alexw\Assignments\AIML339\Project\Mask_RCNN-master\logs\kaakaadataset20250716T2033\plugins\profile\2025_07_16_08_34_59\HAL9000.kernel_stats.pb
+
+epoch 1/30
+batch: 49.5000 - size: 1.0000 - loss: 0.8277 - rpn_class_loss: 0.0037 - rpn_bbox_loss: 0.2077 - mrcnn_class_loss: 0.0241 - mrcnn_bbox_loss: 0.4301 - mrcnn_mask_loss: 0.1620 - val_loss: 0.5761 - val_rpn_class_loss: 0.0022 - val_rpn_bbox_loss: 0.1002 - val_mrcnn_class_loss: 0.0236 - val_mrcnn_bbox_loss: 0.3222 - val_mrcnn_mask_loss: 0.1280
+Epoch 2/30
+batch: 49.5000 - size: 1.0000 - loss: 0.4642 - rpn_class_loss: 0.0036 - rpn_bbox_loss: 0.1809 - mrcnn_class_loss: 0.0180 - mrcnn_bbox_loss: 0.1552 - mrcnn_mask_loss: 0.1064 - val_loss: 0.4831 - val_rpn_class_loss: 0.0014 - val_rpn_bbox_loss: 0.1379 - val_mrcnn_class_loss: 0.0138 - val_mrcnn_bbox_loss: 0.2431 - val_mrcnn_mask_loss: 0.0870
+Epoch 3/30
+batch: 49.5000 - size: 1.0000 - loss: 0.4857 - rpn_class_loss: 0.0051 - rpn_bbox_loss: 0.2065 - mrcnn_class_loss: 0.0162 - mrcnn_bbox_loss: 0.1278 - mrcnn_mask_loss: 0.1301 - val_loss: 0.3694 - val_rpn_class_loss: 0.0018 - val_rpn_bbox_loss: 0.1347 - val_mrcnn_class_loss: 0.0179 - val_mrcnn_bbox_loss: 0.0776 - val_mrcnn_mask_loss: 0.1374
+Epoch 4/30
+batch: 49.5000 - size: 1.0000 - loss: 0.4280 - rpn_class_loss: 0.0034 - rpn_bbox_loss: 0.2023 - mrcnn_class_loss: 0.0129 - mrcnn_bbox_loss: 0.1116 - mrcnn_mask_loss: 0.0977 - val_loss: 0.2386 - val_rpn_class_loss: 0.0028 - val_rpn_bbox_loss: 0.1016 - val_mrcnn_class_loss: 0.0196 - val_mrcnn_bbox_loss: 0.0456 - val_mrcnn_mask_loss: 0.0689
+Epoch 5/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3518 - rpn_class_loss: 0.0028 - rpn_bbox_loss: 0.1684 - mrcnn_class_loss: 0.0203 - mrcnn_bbox_loss: 0.0678 - mrcnn_mask_loss: 0.0925 - val_loss: 0.2436 - val_rpn_class_loss: 0.0021 - val_rpn_bbox_loss: 0.0934 - val_mrcnn_class_loss: 0.0208 - val_mrcnn_bbox_loss: 0.0482 - val_mrcnn_mask_loss: 0.0791
+Epoch 6/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3405 - rpn_class_loss: 0.0026 - rpn_bbox_loss: 0.1631 - mrcnn_class_loss: 0.0198 - mrcnn_bbox_loss: 0.0745 - mrcnn_mask_loss: 0.0806 - val_loss: 0.3109 - val_rpn_class_loss: 0.0035 - val_rpn_bbox_loss: 0.0926 - val_mrcnn_class_loss: 0.0334 - val_mrcnn_bbox_loss: 0.0715 - val_mrcnn_mask_loss: 0.1099
+Epoch 7/30
+batch: 49.5000 - size: 1.0000 - loss: 0.2990 - rpn_class_loss: 0.0032 - rpn_bbox_loss: 0.1370 - mrcnn_class_loss: 0.0143 - mrcnn_bbox_loss: 0.0645 - mrcnn_mask_loss: 0.0800 - val_loss: 0.3183 - val_rpn_class_loss: 0.0013 - val_rpn_bbox_loss: 0.1223 - val_mrcnn_class_loss: 0.0076 - val_mrcnn_bbox_loss: 0.0687 - val_mrcnn_mask_loss: 0.1184
+Epoch 8/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3192 - rpn_class_loss: 0.0022 - rpn_bbox_loss: 0.1505 - mrcnn_class_loss: 0.0080 - mrcnn_bbox_loss: 0.0694 - mrcnn_mask_loss: 0.0891 - val_loss: 0.2728 - val_rpn_class_loss: 8.3879e-04 - val_rpn_bbox_loss: 0.1245 - val_mrcnn_class_loss: 0.0103 - val_mrcnn_bbox_loss: 0.0573 - val_mrcnn_mask_loss: 0.0799
+Epoch 9/30
+_loss: 0.0112 - mrcnn_bbox_loss: 0.0572 - mrcnn_mask_loss: 0.0773 - val_loss: 0.1948 - val_rpn_class_loss: 0.0012 - val_rpn_bbox_loss: 0.0637 - val_mrcnn_class_loss: 0.0103 - val_mrcnn_bbox_loss: 0.0375 - val_mrcnn_mask_loss: 0.0822
+Epoch 10/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3390 - rpn_class_loss: 0.0032 - rpn_bbox_loss: 0.1644 - mrcnn_class_loss: 0.0172 - mrcnn_bbox_loss: 0.0720 - mrcnn_mask_loss: 0.0822 - val_loss: 0.2649 - val_rpn_class_loss: 0.0018 - val_rpn_bbox_loss: 0.1050 - val_mrcnn_class_loss: 0.0175 - val_mrcnn_bbox_loss: 0.0444 - val_mrcnn_mask_loss: 0.0962
+Epoch 11/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3204 - rpn_class_loss: 0.0025 - rpn_bbox_loss: 0.1574 - mrcnn_class_loss: 0.0148 - mrcnn_bbox_loss: 0.0624 - mrcnn_mask_loss: 0.0834 - val_loss: 0.3015 - val_rpn_class_loss: 0.0015 - val_rpn_bbox_loss: 0.1781 - val_mrcnn_class_loss: 0.0054 - val_mrcnn_bbox_loss: 0.0371 - val_mrcnn_mask_loss: 0.0794
+Epoch 12/30
+batch: 49.5000 - size: 1.0000 - loss: 0.4011 - rpn_class_loss: 0.0031 - rpn_bbox_loss: 0.1926 - mrcnn_class_loss: 0.0213 - mrcnn_bbox_loss: 0.0853 - mrcnn_mask_loss: 0.0989 - val_loss: 0.2877 - val_rpn_class_loss: 0.0024 - val_rpn_bbox_loss: 0.1097 - val_mrcnn_class_loss: 0.0408 - val_mrcnn_bbox_loss: 0.0643 - val_mrcnn_mask_loss: 0.0705
+Epoch 13/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3901 - rpn_class_loss: 0.0028 - rpn_bbox_loss: 0.1978 - mrcnn_class_loss: 0.0335 - mrcnn_bbox_loss: 0.0665 - mrcnn_mask_loss: 0.0895 - val_loss: 0.2379 - val_rpn_class_loss: 9.8846e-04 - val_rpn_bbox_loss: 0.1014 - val_mrcnn_class_loss: 0.0266 - val_mrcnn_bbox_loss: 0.0399 - val_mrcnn_mask_loss: 0.0691
+Epoch 14/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3241 - rpn_class_loss: 0.0028 - rpn_bbox_loss: 0.1608 - mrcnn_class_loss: 0.0332 - mrcnn_bbox_loss: 0.0525 - mrcnn_mask_loss: 0.0747 - val_loss: 0.1922 - val_rpn_class_loss: 0.0015 - val_rpn_bbox_loss: 0.0573 - val_mrcnn_class_loss: 0.0256 - val_mrcnn_bbox_loss: 0.0397 - val_mrcnn_mask_loss: 0.0681
+Epoch 15/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3212 - rpn_class_loss: 0.0043 - rpn_bbox_loss: 0.1478 - mrcnn_class_loss: 0.0311 - mrcnn_bbox_loss: 0.0525 - mrcnn_mask_loss: 0.0856 - val_loss: 0.2197 - val_rpn_class_loss: 0.0018 - val_rpn_bbox_loss: 0.0935 - val_mrcnn_class_loss: 0.0275 - val_mrcnn_bbox_loss: 0.0279 - val_mrcnn_mask_loss: 0.0691
+Epoch 16/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3241 - rpn_class_loss: 0.0019 - rpn_bbox_loss: 0.1430 - mrcnn_class_loss: 0.0285 - mrcnn_bbox_loss: 0.0661 - mrcnn_mask_loss: 0.0846 - val_loss: 0.3057 - val_rpn_class_loss: 0.0016 - val_rpn_bbox_loss: 0.1431 - val_mrcnn_class_loss: 0.0361 - val_mrcnn_bbox_loss: 0.0466 - val_mrcnn_mask_loss: 0.0783
+Epoch 17/30
+batch: 49.5000 - size: 1.0000 - loss: 0.3737 - rpn_class_loss: 0.0045 - rpn_bbox_loss: 0.2235 - mrcnn_class_loss: 0.0237 - mrcnn_bbox_loss: 0.0487 - mrcnn_mask_loss: 0.0733 - val_loss: 0.2804 - val_rpn_class_loss: 0.0018 - val_rpn_bbox_loss: 0.1120 - val_mrcnn_class_loss: 0.0374 - val_mrcnn_bbox_loss: 0.0542 - val_mrcnn_mask_loss: 0.0749
+Epoch 18/30
