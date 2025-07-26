@@ -35,14 +35,20 @@ import datetime
 import numpy as np
 import skimage.draw
 import imgaug.augmenters as iaa
+import tensorflow.keras as keras
+
 
 # Root directory of the project
-ROOT_DIR = os.path.abspath("../../")
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
 from mrcnn.config import Config
+import inspect
+print(">>> Using Config class from:", inspect.getfile(Config))
 from mrcnn import model as modellib, utils
+
+NUMBER_OF_TRAIN = 0
 
 # Path to trained weights file
 COCO_WEIGHTS_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
@@ -53,17 +59,23 @@ DEFAULT_LOGS_DIR = os.path.join(ROOT_DIR, "logs")
 
 MASKED_SPECIES = [ "kaakaa" ] #the species we care about in an image (use lowercase!)
 
+#if you're not sure how long you'll be training for (ie, until it stops)
+#and want an alarm to go off when it's done cooking
+PLAY_ALERT_SOUND = False
+ALERT_SOUND_PATH = "C:/Users/alexw/Music/north_island_kaakaa_call.mp3"
+
+SHUTDOWN_AFTER_TRAIN = True
+
 ############################################################
 #  Configurations
 ############################################################
-
 
 class CustomConfig(Config):
     """Configuration for training on the custom dataset.
     Derives from the base Config class and overrides some values.
     """
     # Give the configuration a recognizable name
-    NAME = "kaakaaDataset"
+    NAME = "Feedermask52extraConv"
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
@@ -72,12 +84,19 @@ class CustomConfig(Config):
     # Number of classes (including background)
     NUM_CLASSES = 1 + 1  # Background + number of classes (Here, 2)
 
+    NUM_TRAIN_IMAGES = 340
+
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 100
+    STEPS_PER_EPOCH = int(NUM_TRAIN_IMAGES / IMAGES_PER_GPU)
 
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
 
+    # Shape of output mask
+    # To change this you also need to change the neural network mask branch
+    #MASK_SHAPE = [56, 56]
+
+    #BACKBONE = "resnet50"
 
 ############################################################
 #  Dataset
@@ -137,9 +156,9 @@ class CustomDataset(utils.Dataset):
             #Add the classes according to the requirement
             for r in regions:           
                 try:
-                    species = r['region_attributes']['name'].lower()
+                    species = r['region_attributes']['name'].lower() #Kaaka -> kaakaa (to match masked_species)
                     if species in MASKED_SPECIES:
-                        class_id = MASKED_SPECIES.index(species) + 1  #+1 so classes start at 1 (0 is BG)
+                        class_id = MASKED_SPECIES.index(species) + 1  #+1 because classes start at 1 (0 is BG)
                         polygon = {
                             'all_points_x': r['shape_attributes']['all_points_x'],
                             'all_points_y': r['shape_attributes']['all_points_y'],
@@ -233,6 +252,11 @@ def train(model):
         ),
     ]))
 
+    earlyStopping = keras.callbacks.EarlyStopping(monitor='val_loss',patience=7,restore_best_weights=True, verbose=1)
+    lr_scheduler = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=3, min_lr=1e-8,)
+
+    callbacks = [ earlyStopping, lr_scheduler ]
+
     # *** This training schedule is an example. Update to your needs ***
     # Since we're using a very small dataset, and starting from
     # COCO trained weights, we don't need to train too long. Also,
@@ -240,9 +264,12 @@ def train(model):
     print("Training network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=30,
+                epochs=200,
                 augmentation=augmentation,
+                custom_callbacks=callbacks,
                 layers='heads')
+
+
 
 
 def color_splash(image, mask):
@@ -362,6 +389,7 @@ if __name__ == '__main__':
     # Configurations
     if args.command == "train":
         config = CustomConfig()
+
     else:
         class InferenceConfig(CustomConfig):
             # Set batch size to 1 since we'll be running inference on
@@ -375,6 +403,7 @@ if __name__ == '__main__':
     if args.command == "train":
         model = modellib.MaskRCNN(mode="training", config=config,
                                   model_dir=args.logs)
+        print(f"CONFIG FOR MASK SHAPE IS {model.config.MASK_SHAPE}")
     else:
         model = modellib.MaskRCNN(mode="inference", config=config,
                                   model_dir=args.logs)
@@ -412,6 +441,13 @@ if __name__ == '__main__':
     # Train or evaluate
     if args.command == "train":
         train(model)
+        #making an alert so i don't waste extra time reading a book if it's done training
+        if PLAY_ALERT_SOUND:
+            from playsound import playsound
+            playsound(ALERT_SOUND_PATH)
+        if SHUTDOWN_AFTER_TRAIN:
+            import os
+            os.system("shutdown /s /t 1")
     elif args.command == "splash":
         detect_and_color_splash(model, image_path=args.image,
                                 video_path=args.video)

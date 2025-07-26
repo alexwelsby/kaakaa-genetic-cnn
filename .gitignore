@@ -2,6 +2,7 @@
 __pycache__
 #Mask_RCNN-master
 mask_rcnn
+38env/
 Mask_RCNN-master/assets/
 Mask_RCNN-master/images/
 Mask_RCNN-master/samples/balloon/

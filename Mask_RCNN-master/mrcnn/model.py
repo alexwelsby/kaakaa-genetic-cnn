@@ -22,6 +22,7 @@ import tensorflow.keras.layers as KE
 import tensorflow.keras.utils as KU
 from tensorflow.python.eager import context
 import tensorflow.keras.models as KM
+from tensorflow.keras.optimizers.schedules import ExponentialDecay
 
 from mrcnn import utils
 
@@ -999,7 +1000,9 @@ def build_fpn_mask_graph(rois, feature_maps, image_meta,
 
     Returns: Masks [batch, num_rois, MASK_POOL_SIZE, MASK_POOL_SIZE, NUM_CLASSES]
     """
+    
     # ROI Pooling
+    """From stack overflow if that doesn't work"""
     # Shape: [batch, num_rois, MASK_POOL_SIZE, MASK_POOL_SIZE, channels]
     x = PyramidROIAlign([pool_size, pool_size],
                         name="roi_align_mask")([rois, image_meta] + feature_maps)
@@ -1029,10 +1032,11 @@ def build_fpn_mask_graph(rois, feature_maps, image_meta,
                            name='mrcnn_mask_bn4')(x, training=train_bn)
     x = KL.Activation('relu')(x)
 
-    x = KL.TimeDistributed(KL.Conv2DTranspose(256, (2, 2), strides=2, activation="relu"),
-                           name="mrcnn_mask_deconv")(x)
-    x = KL.TimeDistributed(KL.Conv2D(num_classes, (1, 1), strides=1, activation="sigmoid"),
-                           name="mrcnn_mask")(x)
+    
+    x = KL.TimeDistributed(KL.Conv2DTranspose(256, (2, 2), strides=2, activation="relu"), name="mrcnn_mask_deconv1")(x) 
+    x = KL.TimeDistributed(KL.Conv2DTranspose(256, (2, 2), strides=2, activation="relu"), name="mrcnn_mask_deconv2")(x)
+
+    x = KL.TimeDistributed(KL.Conv2D(num_classes, (1, 1), strides=1, activation="sigmoid"), name="mrcnn_mask")(x)
     return x
 
 
@@ -1241,10 +1245,6 @@ def load_image_gt(dataset, config, image_id, augmentation=None):
         max_dim=config.IMAGE_MAX_DIM,
         mode=config.IMAGE_RESIZE_MODE)
     mask = utils.resize_mask(mask, scale, padding, crop)
-
-    print("mask shape:", mask.shape)
-    print("class_ids shape:", class_ids.shape)
-    print("class_ids:", class_ids)
 
     # Augmentation
     # This requires the imgaug lib (https://github.com/aleju/imgaug)
@@ -2167,9 +2167,10 @@ class MaskRCNN(object):
         metrics. Then calls the Keras compile() function.
         """
         # Optimizer object
-        optimizer = keras.optimizers.SGD(
-            lr=learning_rate, momentum=momentum,
-            clipnorm=self.config.GRADIENT_CLIP_NORM)
+        optimizer = keras.optimizers.SGD(lr=learning_rate, momentum=momentum,clipnorm=self.config.GRADIENT_CLIP_NORM)
+        #changed to adamW because of  Converting sparse IndexedSlices(...) to a dense Tensor of unknown shape warnings
+        #lr_schedule = ExponentialDecay(initial_learning_rate=1e-4,decay_steps=10000,decay_rate=0.95,staircase=True)
+        #optimizer = AdamW(learning_rate=lr_schedule,weight_decay=1e-4)
         # Add Losses
         loss_names = [
             "rpn_class_loss",  "rpn_bbox_loss",
@@ -2347,7 +2348,7 @@ class MaskRCNN(object):
             keras.callbacks.TensorBoard(log_dir=self.log_dir,
                                         histogram_freq=0, write_graph=True, write_images=False),
             keras.callbacks.ModelCheckpoint(self.checkpoint_path,
-                                            verbose=0, save_weights_only=True),
+                                            verbose=0, save_best_only=True, save_weights_only=True),
         ]
 
         # Add custom callbacks to the list

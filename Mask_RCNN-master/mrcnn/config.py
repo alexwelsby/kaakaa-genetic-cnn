@@ -129,7 +129,7 @@ class Config(object):
     # Minimum scaling ratio. Checked after MIN_IMAGE_DIM and can force further
     # up scaling. For example, if set to 2 then images are scaled up to double
     # the width and height, or more, even if MIN_IMAGE_DIM doesn't require it.
-    # However, in 'square' mode, it can be overruled by IMAGE_MAX_DIM.
+    # Howver, in 'square' mode, it can be overruled by IMAGE_MAX_DIM.
     IMAGE_MIN_SCALE = 0
     # Number of color channels per image. RGB = 3, grayscale = 1, RGB-D = 4
     # Changing this requires other changes in the code. See the WIKI for more
@@ -155,7 +155,7 @@ class Config(object):
 
     # Shape of output mask
     # To change this you also need to change the neural network mask branch
-    MASK_SHAPE = [28, 28]
+    MASK_SHAPE = [56, 56]
 
     # Maximum number of ground truth instances to use in one image
     MAX_GT_INSTANCES = 100
@@ -226,18 +226,19 @@ class Config(object):
         # Image meta data length
         # See compose_image_meta() for details
         self.IMAGE_META_SIZE = 1 + 3 + 3 + 4 + 1 + self.NUM_CLASSES
-
-    def to_dict(self):
-        return {a: getattr(self, a)
-                for a in sorted(dir(self))
-                if not a.startswith("__") and not callable(getattr(self, a))}
+        
+        # Number of Conv2DTranspose layers in build_fpn_mask_graph
+        assert self.MASK_SHAPE[0] == self.MASK_SHAPE[1], "Only support square mask currently!"
+        num_deconv_layers = np.log2(self.MASK_SHAPE[0] / self.MASK_POOL_SIZE)
+        # make sure num_deconv_layers is a positive integer
+        assert num_deconv_layers == int(num_deconv_layers) and num_deconv_layers >= 1, \
+            "MASK_SHAPE[0] should be MASK_POOL_SIZE*(2**n), where n>=1"
+        self.NUM_DECONV_LAYERS = int(num_deconv_layers)
 
     def display(self):
         """Display Configuration values."""
         print("\nConfigurations:")
-        for key, val in self.to_dict().items():
-            print(f"{key:30} {val}")
-        # for a in dir(self):
-        #     if not a.startswith("__") and not callable(getattr(self, a)):
-        #         print("{:30} {}".format(a, getattr(self, a)))
+        for a in dir(self):
+            if not a.startswith("__") and not callable(getattr(self, a)):
+                print("{:30} {}".format(a, getattr(self, a)))
         print("\n")

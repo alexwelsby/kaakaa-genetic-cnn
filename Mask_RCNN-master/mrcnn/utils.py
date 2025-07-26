@@ -629,6 +629,8 @@ def generate_pyramid_anchors(scales, ratios, feature_shapes, feature_strides,
     anchors: [N, (y1, x1, y2, x2)]. All generated anchors in one array. Sorted
         with the same order of the given scales. So, anchors of scale[0] come
         first, then anchors of scale[1], and so on.
+        scale is RPN_ANCHOR_SCALES
+        feature_shapes is 
     """
     # Anchors
     # [anchor_count, (y1, x1, y2, x2)]
