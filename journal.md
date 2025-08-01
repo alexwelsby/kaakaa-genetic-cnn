@@ -10,7 +10,7 @@
 
 ### 7/15
 
-* Ran Mask\_RCNN for 10 epochs in the morning. Did not achieve validation loss convergence.
+* Ran Mask\_RCNN for 10 epochs in the morning. Did not achieve convergence.
 * Implemented augmentation from imgaug per Mask\_RCNN guide.
 * Trained for another 10 epochs in the evening to trouble-shoot whether the issue was a too-short training time. Did not successfully reach convergence.
 * Identified small dataset of 244/67 train/val for fine-tuning as a potential source of overfitting (and wild yo-yoing val loss by extension).
@@ -76,6 +76,20 @@
 * ultralytics YOLO as well https://github.com/ultralytics/ultralytics - paula maddigan had good success with that on this project and it's extremely light-weight. wanted to present a novel-to-the-project approach but perhaps the novel aspect could be with regards to the genetic CNN bit.
 * segment anything as well but it seems to be less light-weight
 * https://github.com/SharpAI/DeepCamera good to keep in mind... might be fun to rip apart? would be cool if i could get a working AI camera (pipe dream for if this project was significantly longer)
-* it also predicts one class for every image....... might not be an issue if I'm just using it to generate a masked dataset though 
+* it also predicts one class for every image....... might not be an issue if I'm just using it to generate a masked dataset though
 * i need to take a break for a few days to do other assignments
 * TODO: check out alternatives, write project plan pdf
+
+
+
+### 8/1
+
+* SSD began burning out; received replacement a few days ago and swapped it out
+* going to download YOLO and presumably have some issues with it identifying the background as a fridge but we'll see
+* https://github.com/mjhassan/VIA-to-YOLO-annotation-converter
+* i can limit yolo to only label birds by doing ```yolo predict model=yolo11n.pt source="E:\\Datasets\\test video\\GH013646.MP4" classes=14```... useful, but want it to differentiate kaakaa as a species from other birds.
+* could concatenate my dataset of the new kaakaa class with equal numbers of the original coco dataset classes? to avoid the catastrophic forgetting that happened when I did transfer learning with mask-rcnn coco heads-only using a kaakaa-only dataset... 
+* https://github.com/ultralytics/ultralytics/issues/1707 and this comment explains in detail what they found to work for them re: catastrophic forgetting
+* should probably consider how 'perfect' is reasonable for a 300-level project but we'll give it a go and see what happens
+* bird-only dataset sounds fun too https://github.com/LeeYi-user/BIRDS-525-SPECIES-IMAGE-CLASSIFICATION with https://www.leafwindow.com/en/train-ultralytics-yolov8-with-birds-525-dataset-en/ ... but we don't need to be able to identify other birds at this stage of the project. coco dataset it is
+* converted vgg annotations to yolo format, gave Kaakaa the class # 80 as coco classes end at 79, downloaded 580 training images and 145 validation images for each coco class (for a total of 58k images), plus the annotated kaakaa images (725 before val/split). based the size of the classes on the number of kaakaa images i have currently

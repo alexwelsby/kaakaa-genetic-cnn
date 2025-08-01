@@ -4,3 +4,6 @@
 [submodule "cgp-cnn"]
 	path = cgp-cnn
 	url = https://github.com/sg-nm/cgp-cnn.git
+[submodule "ultralytics"]
+	path = ultralytics
+	url = https://github.com/ultralytics/ultralytics
