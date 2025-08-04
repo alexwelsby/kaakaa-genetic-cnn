@@ -93,3 +93,19 @@
 * should probably consider how 'perfect' is reasonable for a 300-level project but we'll give it a go and see what happens
 * bird-only dataset sounds fun too https://github.com/LeeYi-user/BIRDS-525-SPECIES-IMAGE-CLASSIFICATION with https://www.leafwindow.com/en/train-ultralytics-yolov8-with-birds-525-dataset-en/ ... but we don't need to be able to identify other birds at this stage of the project. coco dataset it is
 * converted vgg annotations to yolo format, gave Kaakaa the class # 80 as coco classes end at 79, downloaded 580 training images and 145 validation images for each coco class (for a total of 58k images), plus the annotated kaakaa images (725 before val/split). based the size of the classes on the number of kaakaa images I have currently
+
+### 8/3
+
+* Got dataset working with YOLO on Google Colab.
+* Trained YOLOv11 on Coco+Kaakaa dataset; restricted Coco dataset further, down to ~1100 images, to avoid overpowering Kaakaa dataset. used class=[80] (Kaakaa class)
+* Trained for 200 epochs, left overnight. Tested it the next morning
+
+### 8/4
+
+* The model from the previous night performs well on kaakaa, but also identifies all birds as kaakaa.
+* Changed how I split Coco; instead of eliminating Coco files randomly until I'm down to 1100 images, check if a Coco image has a bird, and add it to a set. Once the set size is equal to the Kaakaa dataset size, delete the rest. Add the other 1100 Coco images, as well.
+* Trained YOLOv11-seg on 2:1:1 ratio of NegativeCoco:BirdCoco:Kaakaa class (classes=[14,80]). Got poor results on birds, middling results on kaakaa segmentation. Took an absolutely abhorrent amount of time (200 epochs) to get to 1.2 loss (train9)
+* Took the best model from the previous run (train9). Trained it on the same split dataset, but this time with classes=[80] (Kaakaa only) - figured it might have learned differences between Kaakaa and other birds that might help it in fine-tuning now.
+* This new model (train13) is wildly successful. Ignores all birds I've tested, contours and segments kaakaa perfectly.
+* really makes me wonder how good it would be on an AI camera
+* may be able to exit the instance segmentation stage and enter pre-processing
