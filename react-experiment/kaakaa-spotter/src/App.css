@@ -1,0 +1,78 @@
+:root {
+  --dark-green: #0c3c01;
+  --hunter-green: #5b6d49;
+  --beige: #f1f2ed;
+  --brown: #2e2d1d;
+  --light-green: #a2ac82;
+  --drop-shadow: drop-shadow(3px 3px 3px #0000000d);
+  --heading-background: linear-gradient(
+    to right,
+    var(--dark-green),
+    var(--hunter-green)
+  );
+}
+
+main {
+  filter: drop-shadow(3px 3px 3px #0000000d);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/assets/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("/src/assets/Poppins-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--light-green);
+  margin: 0 auto;
+  color: var(--body-font-color);
+}
+
+input {
+  padding: 0.25em;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  color: var(--dsa-red);
+}
+
+button {
+  font-weight: 600 !important;
+  border-width: 2px;
+  border-radius: 4px;
+  line-height: 1;
+  padding: 0.75rem 0.75rem 0.625rem;
+  cursor: pointer;
+  color: white;
+  transition: 0.15s;
+}
+
+.redButton {
+  border-color: var(--dsa-red);
+  background-color: var(--dsa-red);
+}
+
+.redButton:hover {
+  background-color: #9f0005;
+}
+
+.whiteButton {
+  border-color: var(--button-dark);
+  color: var(--button-dark);
+  background-color: white;
+}
+
+.whiteButton:hover {
+  background-color: var(--button-dark);
+  border-color: var(--button-dark);
+  color: #fff;
+}

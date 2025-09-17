@@ -1,0 +1,28 @@
+.indivPost {
+  margin: 35px;
+  position: relative;
+  border: 1px solid var(--dark-green);
+  filter: var(--drop-shadow);
+}
+
+.postContent {
+  padding: 20px;
+  background-color: var(--beige);
+}
+
+.indivPost .postImg {
+  width: 100%;
+  max-height: auto;
+}
+
+.postHeader {
+  width: calc(100% - 10px);
+  top: 0px;
+  background-color: var(--dark-green);
+  padding: 5px;
+  color: var(--beige);
+}
+
+.postBody {
+  padding: 20px;
+}

@@ -1,0 +1,43 @@
+.navBar {
+  background-image: var(--heading-background);
+  padding: 5px;
+  width: 100%;
+  filter: var(--drop-shadow);
+}
+
+.logoHeader {
+  display: flex;
+  align-items: center;
+}
+
+.navBar a {
+  color: white;
+  transition: 0.15s;
+  text-decoration: none;
+  padding: 0px 15px;
+  font-family: "Poppins";
+}
+
+.pageOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar header {
+  height: 50px;
+}
+
+.navBar h2 {
+  color: white;
+  font-size: 90%;
+  margin-left: 0.5rem;
+}
+
+.navBar img {
+  height: auto;
+}
+
+.navBar a:hover {
+  color: var(--dsa-red);
+}

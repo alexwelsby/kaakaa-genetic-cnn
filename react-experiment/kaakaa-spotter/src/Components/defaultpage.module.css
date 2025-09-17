@@ -1,0 +1,7 @@
+.defaultPage {
+  background-color: var(--beige);
+  filter: var(--drop-shadow);
+  border: 1px solid var(--dark-green);
+  margin: 35px;
+  padding: 20px;
+}
