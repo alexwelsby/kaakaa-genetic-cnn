@@ -317,3 +317,25 @@
 * what's that disco Elysium quote that was like "it's remarkable, the shorter their time and less their money, the larger the game became". find my 'outcomes' in the abandoned commercial district 5 years from now
 * much of the react code is going to be shamelessly copied from the dsa visualizer if only to speed things along (and because I'm not being evaluated on my web design...)
 * should also begin fixing up the repo tomorrow if I'm doing this
+
+### 9/20
+* got FAISS with cosine similarity working today. by majority rule with 9 nearest neighbors, we seem to get a reasonably high accuracy - don't have an official full-set metric yet as I haven't written it yet but:
+* when tested on 30 random images of birds from the val set, it matched 25 birds correctly... 83% accuracy 
+* not as good as the original test acc but not horrible
+* okay wrote the accuracy evaluation. also going to check for the median/lowest/highest distances so I know where to threshold... however paula found using just majority vote was the most accurate, so, uh... (but that was going frame-by-frame per video grouping)
+* wrt to citizen science: what happens when there's <3 images of a bird uploaded? :(
+* might try lowering knn to 7 and see if accuracy changes... eh it's 81% at 7
+* and 82% at 5 
+
+### 9/20
+* realized I was feeding the augmented train data into the validation generator... additionally forgot I needed to test it on the test set anyways... 89.7% which is within the ballpark of our original 90.6% test acc. also 89.6% for validation
+* testing cosine distance on dataset C gets 14.8% accuracy, adding blur/noise to lower image quality does not impact acc
+* PAULA DOESN'T FINE-TUNE DINOv2. AM I ILLITERATE? WHY WAS I SO CONVINCED SHE DID? "These characteristics make it particularly well-suited to our task, supporting our need to use unlabeled data and minimise overhead by eliminating the need for fine-tuning"
+* this project has been such a blow to my confidence in being able to read words goodly
+* this makes my job easier though as it means I don't have to waste resources on training
+* forgot that I'm using a heavily oversampled dataset for the CNN, will probably need to change that for ViT-S
+* I'll evaluate it with the same dataset as the CNN just to see how bad it is and then make changes
+* future change should probably include a re-split of the dataset, as well, as we don't really need all three of train, test, and val for this, which means 15% of the data is getting lost to the aether
+* DINOv2 with oversampled unaugmented dataset gets 83.4% acc on dataset B validation set, many identical distances on account of the oversampling (and lack of aug...)
+* going to leave fiddling with it for tomorrow, most important part is that I have code that works with DINOv2 now and can hook into a Django view
+* now to set up django

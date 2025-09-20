@@ -8,7 +8,7 @@ function Nav() {
     <nav className={styles.navBar}>
       <LogoHeader />
       <div className={styles.pageOptions}>
-        <Link to="/app/dashboard">Dashboard</Link>
+        <Link to="/app">Dashboard</Link>
         <Link to="/app/stats">Statistics</Link>
         <Link to="/app/upload">Upload images</Link>
       </div>

@@ -15,9 +15,9 @@ function App() {
     <BrowserRouter>
       <Nav></Nav>
       <Routes>
-      <Route path="app/dashboard" element={<Dashboard />} />
-      <Route path="app/upload" element={<Upload_Images />} />
-      <Route path="app/stats" element={<Stats />} />
+        <Route path="app/" element={<Dashboard />} />
+        <Route path="app/upload" element={<Upload_Images />} />
+        <Route path="app/stats" element={<Stats />} />
       </Routes>
     </BrowserRouter>
   );
