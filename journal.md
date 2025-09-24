@@ -339,3 +339,44 @@
 * DINOv2 with oversampled unaugmented dataset gets 83.4% acc on dataset B validation set, many identical distances on account of the oversampling (and lack of aug...)
 * going to leave fiddling with it for tomorrow, most important part is that I have code that works with DINOv2 now and can hook into a Django view
 * now to set up django
+* added basic api/upload/ that can save uploaded images locally. will need more checks to make it secure against bad actors but i've been working for 12 hours so not today
+TOMORROW
+* for aiming for paula's results: check out this re: 'pixel values were normalised
+to that of ImageNet' https://stackoverflow.com/questions/58151507/why-pytorch-officially-use-mean-0-485-0-456-0-406-and-std-0-229-0-224-0-2
+* remember to right-crop, not centre crop
+* since the distances of new individuals and known individuals are virtually indistinguishable, maybe look at a gaussian mixture model to define new individuals? https://www.geeksforgeeks.org/machine-learning/gaussian-mixture-model/ to try to verify whether a specific datapoint is likely with our current vectors...
+* (edit: ended up doing the above tasks instead of going to bed. imagenet normalisation now used, rightcrop is a ? as YOLO did the cropping of each image for me, gaussian mixture models require the faiss.index to be unpacked which crashes the instance due to OOM so we're not doing that)
+
+### 9/21
+* for CNN FAISS: removed all local oversampling and the keras augmentation I was doing to Dataset B by re-masking, re-splitting original Dataset B when adding vectors to the database as Paula did not do oversampling/augmentation.
+* re-split (based on video file name) into train/val sets (as the test set is a bit redundant w/ this set-up) and re-masked the dataset. vector search with CNN and FAISS now gets 98% accuracy?!
+* will have to repeat the experiment as it's far more likely I screwed up than it is the success is genuine
+* the distances on unknown classes seem (knock on wood) different thusfar as well, with Class C getting lower distances? it hasn't finished crunching the numbers yet though so things can still change
+* as distance is based on image similarity it's entirely possible the difference is due to the higher resolution and has nothing to do with the different classes
+* final dataset C acc of 26%, incorrect guesses median distance=0.816 and correct guesses median distance 0.822, seems difference may just be down to the image resolution
+* paula did majority voting based on video frame - ie, if there are 3 frames, and 2 frames are identified as bird B, then all frames of that video are identified as bird B
+* testing out detecting new birds by decreasing k-nn to 4, and if no identity gets more than 2 votes, it's flagged as a potential new bird. 
+* using this method, the val set of dataset B had 3 images flagged as potentially new birds: -Y, B-, and another B-... obviously none of these three are actually 'new' by virtue of being part of dataset B but the bird B- has a dearth of data to help its case, which may be the issue
+- many new birds get very confident votes for classes that they are absolutely not part of, so obviously this solution is not perfect
+- with k-nn=4 accuracy for dataset B is at 98.5%, and dataset C is 26.7%
+- dataset C had the largest amount of new birds flagged, with 936 images flagged, and 202 images of that were from unseen classes
+- all classes of flagged images: ['Y-GL', 'WX-P', 'X-XX', 'OL-Y', 'K-PW', 'KR-L', 'YM-Y', 'O-LW', 'W-GL', 'XX-O', '-B', 'RM-X', '-Y', 'L-MB', 'B-', 'LM-G']
+- Count of instances of each: Counter({'B-': 500, 'L-MB': 50, 'YM-Y': 49, 'W-GL': 45, 'WX-P': 42, 'KR-L': 42, 'O-LW': 40, '-B': 36, 'Y-GL': 32, 'X-XX': 32, 'RM-X': 29, 'LM-G': 15, '-Y': 10, 'XX-O': 8, 'K-PW': 3, 'OL-Y': 3})
+- Dataset C classes flagged in common with B: ['Y-GL', 'WX-P', 'YM-Y', 'O-LW', '-Y', 'L-MB', 'B-', 'LM-G'] - 8/16 classes
+- Dataset C classes flagged that were genuinely new classes: ['X-XX', 'OL-Y', 'K-PW', 'KR-L', 'W-GL', 'XX-O', '-B', 'RM-X'], which is... 100% of new classes
+- 738 instances from Dataset B including B-'s outlier, 198 instances from Dataset C
+- this is considering that Dataset C has 4271(!!) images from classes in common with Dataset B (with >2k of those images being of B-, which barely appeared in Dataset B), and only 934 images of novel classes
+- while this isn't a perfect method (only 202/934 images of new classes were flagged) we're getting somewhere
+- running the same experiment but with Dataset A and Dataset C instead of Dataset B as the base vector set:
+- Dataset A: bird ID on validation set gets 88.1% acc
+- Dataset C: bird ID on validation set gets 92.2% acc
+- dataset A is significantly smaller with worse lighting and the CNN was trained exclusively on Dataset B, so...
+- noticing that when it has vectors for the classes it's guessing on, the median distance of incorrect guesses is lower than the distances of correct guesses... but this isn't the case for classes it hasn't seen, where the median distance is fundamentally the same regardless of if it's correct or incorrect
+- makes it really difficult to threshold!!!
+- I'm suspicious of Dataset B's results still as i did re-split the dataset to get the 80/20 split, so there may be data leakage. I'll see about getting a script tomorrow to check for any overlap between the old validation/test sets and the current training set
+* forgot that I culled images for classes so everything would have 200 unique images max before oversampling. okay awesome 900 images in train and 2000 in validation, why not... but got 91% accuracy still so that's fine
+* DINOv2 getting 94% on the DINO_Dataset_B dataset with ImageNet normalisation
+* removing centre cropping and resizing to 224x224 and seeing what that does
+
+# 9/22
+* https://github.com/somasundaram1702/Unknown-face-recognition/ uses an Extreme Values Machine to identify unknown classes...

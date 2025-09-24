@@ -8,6 +8,10 @@
   min-height: 95%;
 }
 
+.half img {
+  max-width: 95%;
+}
+
 .previewImg {
   max-width: 75%;
 }

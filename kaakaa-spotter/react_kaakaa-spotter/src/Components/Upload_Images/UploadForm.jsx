@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 
 function UploadForm() {
   const [file, setFile] = useState(null);
-  const [response, setResponse] = useState(null);
+  const [maskUrls, setMaskUrls] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [checked, setChecked] = useState(false);
   const [bands, setBands] = useState("");
 
@@ -38,7 +39,10 @@ function UploadForm() {
         method: "POST",
         body: formData,
       });
-      console.log(res);
+      const data = await res.json();
+      console.log(data);
+      setMaskUrls(data["mask_urls"]);
+      setIsLoading(false);
     } catch (error) {
       console.error("Failed to send/fetch to upload api ", error);
     }
@@ -72,8 +76,16 @@ function UploadForm() {
         </>
       ) : (
         <></>
+      )}{" "}
+      {isLoading ? (
+        <></>
+      ) : (
+        <>
+          {maskUrls.map((url, i) => (
+            <img key={i} src={url} alt={`mask-${i}`} />
+          ))}
+        </>
       )}
-
       <img className={styles.previewImg} />
     </form>
   );

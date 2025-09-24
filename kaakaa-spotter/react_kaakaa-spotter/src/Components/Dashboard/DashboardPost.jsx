@@ -1,15 +1,48 @@
 import styles from "./dashpost.module.css";
 
-function DashboardPost() {
+import { useState } from "react";
+
+function DashboardPost({ key, post }) {
+  //converts
+  const relative_date = Math.floor((Date.now() - post.date) / 1000);
+
+  const [currentUrl, setUrl] = useState(post.original);
+
+  //chatGPT special.
+  function timeAgoOrAhead(unixMillis) {
+    const diff = unixMillis - Date.now();
+    const seconds = Math.floor(Math.abs(diff) / 1000);
+
+    const intervals = [
+      { label: "year", seconds: 31536000 },
+      { label: "month", seconds: 2592000 },
+      { label: "day", seconds: 86400 },
+      { label: "hour", seconds: 3600 },
+      { label: "minute", seconds: 60 },
+      { label: "second", seconds: 1 },
+    ];
+
+    for (const interval of intervals) {
+      const count = Math.floor(seconds / interval.seconds);
+      if (count >= 1) {
+        const label = interval.label + (count > 1 ? "s" : "");
+        return diff < 0 ? `${count} ${label} ago` : `in ${count} ${label}`;
+      }
+    }
+    return "just now";
+  }
+
   return (
     <div className={styles.indivPost}>
-      <div className={styles.postHeader}>Uploaded XX minutes ago</div>
+      <div className={styles.postHeader}>
+        Uploaded {timeAgoOrAhead(post.date)}
+      </div>
       <div className={styles.postContent}>
-        <img
-          className={styles.postImg}
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fafrican-parrot.com%2Fwp-content%2Fuploads%2F2020%2F01%2FNew-Zealand-Kaka-parrot-1.png&f=1&nofb=1&ipt=7e4008be4761ddd554422410379c30970292eb2d262c8721b00db4d109914f1c"
-        />
-        <div className={styles.postBody}>DASHPOST lol. lmao even</div>
+        <button onClick={() => setUrl(post.original)}>Original</button>
+        {post.masks.map((mask, index) => (
+          <button onClick={() => setUrl(mask)}>Mask {index}</button>
+        ))}
+        <img className={styles.postImg} src={currentUrl} />
       </div>
     </div>
   );
