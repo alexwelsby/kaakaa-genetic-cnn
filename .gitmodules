@@ -10,3 +10,6 @@
 [submodule "cgp-cnn-fork"]
 	path = cgp-cnn-fork
 	url = https://github.com/alexwelsby/cgp-cnn.git
+[submodule "kaakaa-spotter"]
+	path = kaakaa-spotter
+	url = https://github.com/alexwelsby/kaakaa-spotter.git
