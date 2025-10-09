@@ -1,1 +1,3 @@
-heyy
+- Pre-processing: Contains the FIFTYONE script I used to prune too-similar images from the dataset. All other pre-processing referenced Ferreira's pre-processing methods.
+- instance segmentation: Contains the script I used to evaluate Mask_RCNN and the training script for YOLOv11.
+- finding_optimal_cnn: Contains scripts for training the benchmark CNN for both the Ferreira Great Tits dataset (undiscussed in the paper) and the kaakaa dataset B, as well as scripts for utilising CGP-CNN on Ferreira's Great Tits dataset and the kaakaa dataset B.
