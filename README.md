@@ -10,11 +10,12 @@ Submodules:
 - [Kaakaa Spotter](https://github.com/alexwelsby/kaakaa-spotter/) Unmentioned in the paper. A 'for fun' Django/React web server that hosts the [models I've trained](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/models) and copies of the FAISS database. Users can upload images of kaakaa; uploaded images can be masked by YOLO. Users can also get the class of their images 'predicted', with the caveat that FAISS isn't awesome at detecting unknown birds (and it's an image similarity search, so a known bird in a dissimilar image might look like a new bird...)
 
 Directories:
--
+- [helper scripts](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/helper_scripts): All notebooks I used to preprocess data or train models. Note that I haven't included scripts that I don't feel I 'own' here - so LLM scripts for automated file moving are not present. Notebooks I didn't write but where the output may be useful have been included - such as the Mask-RCNN evaluate_new_model.ipbyn. 
+- [models](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/models): Models I've trained. DINOv2 was excluded, as I did not fine-tune or train the model in any way.
 
 
 
-A journal of day-to-day changes and reasoning for them can be found (here)[https://github.com/alexwelsby/kaakaa-genetic-cnn/blob/main/journal.md].
+A journal of day-to-day changes and reasoning for them can be found [here](https://github.com/alexwelsby/kaakaa-genetic-cnn/blob/main/journal.md).
 
 
 
