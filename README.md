@@ -11,7 +11,7 @@ Submodules:
 
 Directories:
 - [helper scripts](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/helper_scripts): All notebooks I used to preprocess data or train models. Note that I haven't included scripts that I don't feel I 'own' here - so LLM scripts for automated file moving are not present. Notebooks I didn't write but where the output may be useful have been included - such as the Mask-RCNN evaluate_new_model.ipbyn. 
-- [models](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/models): Models I've trained. DINOv2 was excluded, as I did not fine-tune or train the model in any way.
+- [models](https://github.com/alexwelsby/kaakaa-genetic-cnn/tree/main/models): Models I've trained. DINOv2 was excluded, as I did not fine-tune or train the model in any way; the 'final' Mask-RCNN was also excluded due to irrelevance to the paper.
 
 
 
